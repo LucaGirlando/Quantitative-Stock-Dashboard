@@ -6,7 +6,14 @@ import numpy as np
 
 # Configurazione
 st.set_page_config(page_title="Stock Dashboard", layout="wide")
-st.markdown("""<div style='text-align: center; font-size:18px;'>Created by: <a href="https://www.linkedin.com/in/luca-girlando-775463302/" target="_blank">Luca Girlando</a></div><br>""", unsafe_allow_html=True)
+
+st.markdown("""
+    <p style="font-size: 12px; text-align: center;">
+        Created by: <a href="https://www.linkedin.com/in/luca-girlando-775463302/" target="_blank">Luca Girlando</a><br>
+        <span style="color: red;">Please use the light theme, otherwise with the dark theme some parts might not be displayed correctly</span>
+    </p>
+""", unsafe_allow_html=True)
+
 st.title("📊 Quantitative Stock Dashboard")
 
 # Custom CSS for styling
