@@ -9,8 +9,7 @@ st.set_page_config(page_title="Stock Dashboard", layout="wide")
 
 st.markdown("""
     <p style="font-size: 12px; text-align: center;">
-        Created by: <a href="https://www.linkedin.com/in/luca-girlando-775463302/" target="_blank">Luca Girlando</a><br>
-        <span style="color: red;">Please use the light theme, otherwise with the dark theme some parts might not be displayed correctly</span>
+        Created by: <a href="https://www.linkedin.com/in/luca-girlando-775463302/" target="_blank">Luca Girlando</a>
     </p>
 """, unsafe_allow_html=True)
 
@@ -28,14 +27,18 @@ st.markdown("""
     --call-green: #2e8b57;
     --put-red: #c04e4e;
     --highlight: #f0f4f8;
+    --text-light: #333333;
+    --text-dark: #f0f2f6;
+    --bg-light: #f8f9fa;
+    --bg-dark: #0e1117;
+    --card-light: white;
+    --card-dark: #1a2639;
+    --border-light: rgba(0,0,0,0.05);
+    --border-dark: #3e4a61;
 }
 
 * {
     font-family: 'Lato', 'Segoe UI', Roboto, sans-serif;
-}
-
-html, body, .stApp {
-    background-color: #f8f9fa;
 }
 
 h1, h2, h3, h4 {
@@ -46,6 +49,9 @@ h1, h2, h3, h4 {
 
 .stSidebar {
     background: linear-gradient(135deg, var(--primary-dark), var(--primary-medium)) !important;
+}
+
+.stSidebar .sidebar-content {
     color: white !important;
 }
 
@@ -61,11 +67,11 @@ h1, h2, h3, h4 {
     align-items: center;
     padding: 1.8rem 2rem;
     border-radius: 12px;
-    background: white;
+    background: var(--card-light);
     box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     margin-bottom: 1.5rem;
     text-align: center;
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid var(--border-light);
     transition: all 0.3s ease-in-out;
 }
 
@@ -79,7 +85,7 @@ h1, h2, h3, h4 {
     font-weight: 800;
     font-family: 'Roboto Mono', monospace;
     margin: 0.7rem 0;
-    color: var(--primary-dark);
+    color: var(--text-light);
 }
 
 .metric-label {
@@ -93,17 +99,69 @@ h1, h2, h3, h4 {
 .stDataFrame {
     border-radius: 10px !important;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
-    border: 1px solid rgba(0,0,0,0.03) !important;
+    border: 1px solid var(--border-light) !important;
 }
 
 .footer {
     font-size: 0.78rem;
     text-align: center;
     margin-top: 3rem;
-    color: #6c757d;
+    color: var(--primary-medium);
     padding: 1.2rem;
-    border-top: 1px solid #e9ecef;
+    border-top: 1px solid var(--border-light);
     letter-spacing: 0.03em;
+}
+
+.st-expander {
+    background-color: var(--card-light) !important;
+    border: 1px solid var(--border-light) !important;
+}
+
+.stAlert {
+    background-color: var(--card-light) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-dark: #f0f2f6;
+        --primary-medium: #a1a9b8;
+        --highlight: #1a2639;
+    }
+    
+    html, body, .stApp {
+        background-color: var(--bg-dark) !important;
+    }
+    
+    h1, h2, h3, h4 {
+        color: var(--text-dark) !important;
+    }
+    
+    .metric-container {
+        background: var(--card-dark) !important;
+        border-color: var(--border-dark) !important;
+    }
+    
+    .metric-value {
+        color: var(--text-dark) !important;
+    }
+    
+    .stDataFrame {
+        background-color: var(--card-dark) !important;
+        border-color: var(--border-dark) !important;
+    }
+    
+    .st-expander {
+        background-color: var(--card-dark) !important;
+        border-color: var(--border-dark) !important;
+    }
+    
+    .stAlert {
+        background-color: var(--card-dark) !important;
+    }
+    
+    .footer {
+        border-top-color: var(--border-dark) !important;
+    }
 }
 </style>
 """, unsafe_allow_html=True)
